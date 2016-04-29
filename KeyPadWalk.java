@@ -8,7 +8,7 @@ public class KeyPadWalk {
     public static void main(String[] args) {
         Scanner in =  new Scanner(System.in);
         int size = in.nextInt();
-        BigInteger TL = new BigInteger("1");
+        BigInteger TL = new BigInteger("1");//start at the top left corner
         BigInteger TM = new BigInteger("0");
         BigInteger TR = new BigInteger("0");
         BigInteger ML = new BigInteger("0");
@@ -19,6 +19,7 @@ public class KeyPadWalk {
         BigInteger BR = new BigInteger("0");
         BigInteger BB = new BigInteger("0");
         for(int i = 0 ; i < size-1; i++){
+            //set the current values so you can use them to add to other node values without changing them
             BigInteger tempTL = TL;
             BigInteger tempTM = TM;
             BigInteger tempTR = TR;
@@ -92,6 +93,7 @@ public class KeyPadWalk {
             BB = BB.subtract(tempBB);
         }
         BigInteger total = new BigInteger("0");
+        //add all the current possible solutions up
         total = total.add(TM);
         total = total.add(TL);
         total = total.add(TR);         
